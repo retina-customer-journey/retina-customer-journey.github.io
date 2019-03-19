@@ -1,0 +1,246 @@
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11"/>
+    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="reveal.js/css/theme/black.css">
+    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css" />
+    <link rel="stylesheet" href="reveal.js/css/custom-gc.css" />
+    <link rel="stylesheet" href="reveal.js/css/retina.css">
+    <style>
+      .button {
+        background-color: white;
+        padding: 14px 30px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        border-radius: 8px;
+        -webkit-transition-duration: 0.3s; /* Safari */
+        transition-duration: 0.3s;
+      }
+
+      .best-button {
+        position: absolute;
+        border: 2px solid #4CAF50;
+        top: 0px;
+        right: 0px;
+      }
+
+      .worst-button {
+        position: absolute;
+        border: 2px solid #b20000;
+        top: 0px;
+        left: 0px;
+      }
+
+      .best-button:hover {
+        background-color: #4CAF50; /* Green */
+        color: white;
+      }
+
+      .worst-button:hover {
+        background-color: #b20000;
+        color: white;
+      }
+
+      .legend {
+        position: fixed;
+        top: 3px;
+        left: -120px;
+        width: 200px;
+        border: 3px solid #73AD21;
+      }
+
+      .summary {
+        position: fixed;
+        bottom: 100px;
+        right: -100px;
+        width: 200px;
+        background-color: white;
+        text-align: center;
+        /* text-decoration: none; */
+        /* display: inline-block; */
+        color: black;
+      }
+
+  </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Intro -->
+<section>
+  <h1>Visualizing the Customer Journey</h1>
+  <div class="prompt input_prompt"></div>
+  <p>This interactive deck allows you to explore the entire customer journey, and help identify paths that are most associated with high LTV.</p>
+  <br>
+  <h5>How To Use This Tool</h5>
+  <p>
+    - Hover your cursor over any node to display summary statistics for the path up till that node.<br>
+    - Click on any node to collapse/expand it.
+  </p>
+</section>
+
+<!-- Main Visualization -->
+<section class="fig-container" data-file="tree_html/tree.html" data-transition="fade">
+  <img src="img/tree_legend.png" class="legend">
+</section>
+
+<!-- Common Path 1 -->
+<section class="fig-container" data-file="tree_html/tree_common1.html" data-transition="fade">
+  <img src="img/tree_legend.png" class="legend">
+  <div class="summary" style="padding:10px;">
+    <h4 style="font-size:20px; color:black;">Most Common Path</h4>
+    <p style="font-size:12px;">This is the most common path (greatest # of users):<br>
+      Kale Smoothie
+    </p>
+  </div>
+</section>
+<!-- Common Path 2 -->
+<section class="fig-container" data-file="tree_html/tree_common2.html" data-transition="fade">
+  <img src="img/tree_legend.png" class="legend">
+  <div class="summary" style="padding:10px;">
+    <h4 style="font-size:20px; color:black;">2nd Most Common Path</h4>
+    <p style="font-size:12px;">This is the 2nd most common path (greatest # of users):<br>
+      Tomato Soup
+    </p>
+  </div>
+</section>
+<!-- Best Path 1 -->
+<section class="fig-container" data-file="tree_html/tree_best1.html" data-transition="fade">
+  <img src="img/tree_legend.png" class="legend">
+  <div class="summary" style="padding:10px;">
+    <h4 style="font-size:20px; color:black;">Path with Highest LTV</h4>
+    <p style="font-size:12px;">This is the path with the highest LTV:<br>
+      Kale Smoothie -> Kale Smoothie -> Kale Smoothie -> Tomato Soup -> Lunch Box
+    </p>
+  </div>
+</section>
+<!-- Best Path 2 -->
+<section class="fig-container" data-file="tree_html/tree_best2.html" data-transition="fade">
+  <img src="img/tree_legend.png" class="legend">
+  <div class="summary" style="padding:10px;">
+    <h4 style="font-size:20px; color:black;">Path with 2nd Highest LTV</h4>
+    <p style="font-size:12px;">This is the path with the 2nd highest LTV:<br>
+      Kale Smoothie -> Kale Smoothie -> Kale Smoothie -> Kale Smoothie -> Tomato Soup
+    </p>
+  </div>
+</section>
+<!-- Worst Path 1 -->
+<section class="fig-container" data-file="tree_html/tree_worst1.html" data-transition="fade">
+  <img src="img/tree_legend.png" class="legend">
+  <div class="summary" style="padding:10px;">
+    <h4 style="font-size:20px; color:black;">Path with Lowest LTV</h4>
+    <p style="font-size:12px;">This is the path with the lowest LTV:<br>
+      Tomato Soup -> CHURN
+    </p>
+  </div>
+</section>
+<!-- Worst Path 2 -->
+<section class="fig-container" data-file="tree_html/tree_worst2.html" data-transition="fade">
+  <img src="img/tree_legend.png" class="legend">
+  <div class="summary" style="padding:10px;">
+    <h4 style="font-size:20px; color:black;">Path with 2nd Lowest LTV</h4>
+    <p style="font-size:12px;">This is the path with the 2nd lowest LTV.<br>
+      Kale Smoothie -> CHURN
+    </p>
+  </div>
+</section>
+
+<!-- START FINAL PAGE -->
+<section>
+    <h1> Questions?</h1>
+    <div class="row no-margin-top">
+      <p>If you have any questions, please reach out to info@retina.ai</p>
+    </div>
+</section>
+<!-- END FINAL PAGE -->
+
+</div> <!-- slides -->
+</div> <!-- Reveal -->
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.js"></script>
+<script>
+  function toggleBest() {
+    var x = document.getElementById("best-summary");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
+  function toggleWorst() {
+    var x = document.getElementById("worst-summary");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+</script>
+
+<script>
+
+// Full list of configuration options available at:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: false,
+    transition: 'fade',
+    slideNumber: 'c/t',
+
+    // // optional configurations for reveald3
+    reveald3: {
+
+         // If the previous slide is a slide further in the deck (i.e. we come back to
+         // slide from the next slide), by default the last fragment transition will be
+         // triggered to to get the last state of the visualization and simulate the
+         // the state the simulation was in when we left the slide. This can be
+         // discarded.
+         runLastState: true, //default true
+
+         // Specifies if iframes (that host the visualization) have to be kept
+         // on the slide once the slide is not active anymore (e.g.: navigating
+         // to next slide). If true, the current visualization will be kept
+         // active so that its state will be the one displayed if we navigate
+         // back to the slide. This is false by default, as it can be the source
+         // of performance issues if complex visualizations (e.g. force layout)
+         // are displayed and kept in the background.
+         // Also, see the runLastState option as a simpler less
+         // resource-demanding alternative.
+         keepIframe: false, // default: false
+
+
+         // This will prefix the path attributes of the source html paths with the given path.
+         // (by default "src" if set to true or with the specified path if string)
+         mapPath: false, // default: false
+
+         // If true, will try to locate the file at a fallback url without the mapPath prefix in case no file is found
+         // at the stipulated url with mapPath
+         tryFallbackURL: false, //default false
+
+         // Checking for file existance has been reported to fail in rare
+         // cases though files did exist. This option is to disable the file checking.
+         //see: https://github.com/gcalmettes/reveal.js-d3/issues/10
+         disableCheckFile: false, //default false
+    },
+
+    // Reveal.js plugins
+    dependencies: [
+
+        { src: 'reveald3.js' },
+        { src: 'tree_html/' },
+        { src: 'data/' },
+        { src: 'img/' }
+
+    ]
+});
+
+</script>
+</body>
+</html>
