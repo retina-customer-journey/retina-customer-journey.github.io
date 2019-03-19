@@ -23,7 +23,7 @@ Syntax highlighted code block
 
 **Bold** and _Italic_ and `Code` text
 
-[Viz!](http://github.com/retina-customer-journey/retina-customer-journey.github.io/blob/master/Channel%20Health%20Visualization.ipynb) and ![Image](src)
+[Viz!](https://github.com/retina-customer-journey/retina-customer-journey.github.io/blob/master/Channel%20Health%20Visualization.ipynb) and ![Image](src)
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
